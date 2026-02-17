@@ -534,12 +534,8 @@ XwaylandInterface *Application::xwayland() const
     return nullptr;
 }
 
-static PlatformCursorImage grabCursorOpenGL()
+static PlatformCursorImage grabCursorOpenGL(WorkspaceScene *scene)
 {
-    auto scene = Compositor::self()->scene();
-    if (!scene) {
-        return PlatformCursorImage{};
-    }
     Cursor *cursor = Cursors::self()->currentCursor();
     LogicalOutput *output = workspace()->outputAt(cursor->pos());
 
@@ -563,12 +559,8 @@ static PlatformCursorImage grabCursorOpenGL()
     return PlatformCursorImage(image, cursor->hotspot());
 }
 
-static PlatformCursorImage grabCursorSoftware()
+static PlatformCursorImage grabCursorSoftware(WorkspaceScene *scene)
 {
-    auto scene = Compositor::self()->scene();
-    if (!scene) {
-        return PlatformCursorImage{};
-    }
     Cursor *cursor = Cursors::self()->currentCursor();
     LogicalOutput *output = workspace()->outputAt(cursor->pos());
 
@@ -599,9 +591,9 @@ PlatformCursorImage Application::cursorImage() const
     // The cursor content is provided by a client, grab the contents of the cursor scene.
     switch (effects->compositingType()) {
     case OpenGLCompositing:
-        return grabCursorOpenGL();
+        return grabCursorOpenGL(m_scene.get());
     case QPainterCompositing:
-        return grabCursorSoftware();
+        return grabCursorSoftware(m_scene.get());
     default:
         Q_UNREACHABLE();
     }
@@ -623,6 +615,21 @@ void Application::startInteractivePositionSelection(std::function<void(const QPo
         return;
     }
     input()->startInteractivePositionSelection(callback);
+}
+
+WorkspaceScene *Application::scene() const
+{
+    return m_scene.get();
+}
+
+void Application::createScene()
+{
+    m_scene = std::make_unique<WorkspaceScene>();
+}
+
+void Application::destroyScene()
+{
+    m_scene.reset();
 }
 
 } // namespace
