@@ -3208,16 +3208,13 @@ void Window::setOnActivities(const QStringList &newActivitiesList)
     if (Workspace::self()->activities()->serviceStatus() != KActivities::Consumer::Running) {
         return;
     }
-    const QStringList allActivities = Workspace::self()->activities()->all();
-    QStringList effectiveActivities = [&] {
-        auto result = rules()->checkActivity(newActivitiesList);
 
-        const auto it = std::remove_if(result.begin(), result.end(), [=](const QString &activity) {
-            return !allActivities.contains(activity);
-        });
-        result.erase(it, result.end());
-        return result;
-    }();
+    QStringList effectiveActivities = rules()->checkActivity(newActivitiesList);
+
+    const QStringList allActivities = Workspace::self()->activities()->all();
+    effectiveActivities.removeIf([&allActivities](const QString &activity) {
+        return !allActivities.contains(activity);
+    });
 
     const bool allActivityExplicitlyRequested = effectiveActivities.isEmpty() || effectiveActivities.contains(Activities::nullUuid());
     const bool allActivitiesCovered = effectiveActivities.size() > 1 && effectiveActivities.size() == allActivities.size();
