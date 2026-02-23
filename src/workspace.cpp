@@ -679,6 +679,9 @@ void Workspace::updateOutputConfiguration()
             }
             toEnable.removeLast();
             break;
+        case OutputConfigurationError::NotActive:
+            // can't do anything, have to wait for a VT switch
+            break;
         }
     } while (error == OutputConfigurationError::TooManyEnabledOutputs && !toEnable.isEmpty() && !alreadyHaveEnabledOutputs);
 

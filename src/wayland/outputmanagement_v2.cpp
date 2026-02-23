@@ -675,6 +675,9 @@ void OutputConfigurationV2Interface::kde_output_configuration_v2_apply(Resource 
         // TODO provide a more accurate error reason once the driver actually gives us anything
         sendFailure(resource, i18n("The driver rejected the output configuration"));
         break;
+    case OutputConfigurationError::NotActive:
+        sendFailure(resource, i18n("The session is not active"));
+        break;
     }
 }
 

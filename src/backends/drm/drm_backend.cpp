@@ -384,6 +384,9 @@ OutputConfigurationError DrmBackend::applyOutputChanges(const OutputConfiguratio
                 continue;
             }
             if (const auto changeset = config.constChangeSet(output)) {
+                if (!gpu->isActive()) {
+                    return OutputConfigurationError::NotActive;
+                }
                 output->queueChanges(changeset);
                 if (changeset->enabled.value_or(output->isEnabled())) {
                     toBeEnabled << output;

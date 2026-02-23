@@ -414,6 +414,7 @@ enum class OutputConfigurationError {
     Unknown,
     TooManyEnabledOutputs,
     Timeout,
+    NotActive,
 };
 
 } // namespace
