@@ -121,6 +121,8 @@ void VirtualOutput::applyChanges(const OutputConfiguration &config)
         }
         next.modes = newModes;
     }
+    next.dpmsMode = props->dpmsMode.value_or(next.dpmsMode);
+    next.uuid = props->uuid.value_or(next.uuid);
 
     setState(next);
     m_renderLoop->setRefreshRate(next.currentMode->refreshRate());
