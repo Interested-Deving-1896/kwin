@@ -19,8 +19,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-23 00:46+0000\n"
-"PO-Revision-Date: 2026-02-20 09:11-0300\n"
+"POT-Creation-Date: 2026-02-24 00:47+0000\n"
+"PO-Revision-Date: 2026-02-23 09:03-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -2856,10 +2856,9 @@ msgstr "Menus:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_ExcludeFullScreen)
 #: plugins/translucency/package/contents/ui/config.ui:201
-#, fuzzy, kde-format
-#| msgid "Fullscreen windows"
+#, kde-format
 msgid "Exclude fullscreen windows"
-msgstr "Janelas em tela cheia"
+msgstr "Excluir janelas em tela cheia"
 
 #. i18n: ectx: property (text), widget (QLabel, moveresize_label)
 #: plugins/translucency/package/contents/ui/config.ui:217
@@ -4283,34 +4282,42 @@ msgstr ""
 "Não é permitido desabilitar todas as saídas por meio de alterações de "
 "configuração"
 
-#: wayland/outputmanagement_v2.cpp:631
+#: wayland/outputmanagement_v2.cpp:630
+#, kde-format
+msgid "%1 cannot mirror itself"
+msgstr ""
+
+#: wayland/outputmanagement_v2.cpp:637
 #, kde-format
 msgid "Cannot add a custom mode with an empty size"
 msgstr "Não é possível adicionar um modo personalizado com um tamanho vazio"
 
-#: wayland/outputmanagement_v2.cpp:635
+#: wayland/outputmanagement_v2.cpp:641
 #, kde-format
 msgid "Cannot add a custom mode with a refresh rate of zero Hz"
 msgstr ""
 "Não é possível adicionar um modo personalizado com uma taxa de atualização "
 "de zero Hz"
 
-#: wayland/outputmanagement_v2.cpp:646
-#, kde-format
-msgid "Position of output %s is way too negative (%d, %d)"
+#: wayland/outputmanagement_v2.cpp:652
+#, fuzzy, kde-format
+#| msgid "Position of output %s is way too negative (%d, %d)"
+msgid "Position of output %1 is way too negative (%2, %3)"
 msgstr "A posição da saída %s é muito negativa (%d, %d)"
 
-#: wayland/outputmanagement_v2.cpp:649
-#, kde-format
-msgid "Position of enabled output %s is negative (%d, %d)"
+#: wayland/outputmanagement_v2.cpp:655
+#, fuzzy, kde-format
+#| msgid "Position of enabled output %s is negative (%d, %d)"
+msgid "Position of enabled output %1 is negative (%2, %3)"
 msgstr "A posição da saída habilitada %s é negativa (%d, %d)"
 
-#: wayland/outputmanagement_v2.cpp:653
-#, kde-format
-msgid "Position of output %s is way too large (%d, %d)"
+#: wayland/outputmanagement_v2.cpp:659
+#, fuzzy, kde-format
+#| msgid "Position of output %s is way too large (%d, %d)"
+msgid "Position of output %1 is way too large (%2, %3)"
 msgstr "A posição da saída %s é muito grande (%d, %d)"
 
-#: wayland/outputmanagement_v2.cpp:670
+#: wayland/outputmanagement_v2.cpp:676
 #, kde-format
 msgid "The driver rejected the output configuration"
 msgstr "O driver rejeitou a configuração de saída"

@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-23 00:46+0000\n"
+"POT-Creation-Date: 2026-02-24 00:47+0000\n"
 "PO-Revision-Date: 2026-01-28 20:00+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -4264,32 +4264,40 @@ msgstr "有關的一個輸出已不再可用"
 msgid "Disabling all outputs through configuration changes is not allowed"
 msgstr "不允許透過設定值變更來停用所有輸出"
 
-#: wayland/outputmanagement_v2.cpp:631
+#: wayland/outputmanagement_v2.cpp:630
+#, kde-format
+msgid "%1 cannot mirror itself"
+msgstr ""
+
+#: wayland/outputmanagement_v2.cpp:637
 #, kde-format
 msgid "Cannot add a custom mode with an empty size"
 msgstr "無法新增大小是空白的自訂模式"
 
-#: wayland/outputmanagement_v2.cpp:635
+#: wayland/outputmanagement_v2.cpp:641
 #, kde-format
 msgid "Cannot add a custom mode with a refresh rate of zero Hz"
 msgstr "無法新增更新頻率是 0 Hz 的自訂模式"
 
-#: wayland/outputmanagement_v2.cpp:646
-#, kde-format
-msgid "Position of output %s is way too negative (%d, %d)"
+#: wayland/outputmanagement_v2.cpp:652
+#, fuzzy, kde-format
+#| msgid "Position of output %s is way too negative (%d, %d)"
+msgid "Position of output %1 is way too negative (%2, %3)"
 msgstr "輸出 %s 的位置負到不合理 (%d, %d)"
 
-#: wayland/outputmanagement_v2.cpp:649
-#, kde-format
-msgid "Position of enabled output %s is negative (%d, %d)"
+#: wayland/outputmanagement_v2.cpp:655
+#, fuzzy, kde-format
+#| msgid "Position of enabled output %s is negative (%d, %d)"
+msgid "Position of enabled output %1 is negative (%2, %3)"
 msgstr "已啟用的輸出 %s 的位置是負的 (%d, %d)"
 
-#: wayland/outputmanagement_v2.cpp:653
-#, kde-format
-msgid "Position of output %s is way too large (%d, %d)"
+#: wayland/outputmanagement_v2.cpp:659
+#, fuzzy, kde-format
+#| msgid "Position of output %s is way too large (%d, %d)"
+msgid "Position of output %1 is way too large (%2, %3)"
 msgstr "輸出 %s 的位置大到不合理 (%d, %d)"
 
-#: wayland/outputmanagement_v2.cpp:670
+#: wayland/outputmanagement_v2.cpp:676
 #, kde-format
 msgid "The driver rejected the output configuration"
 msgstr "驅動程式回絕了提供的輸出配置"

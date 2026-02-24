@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-23 00:46+0000\n"
+"POT-Creation-Date: 2026-02-24 00:47+0000\n"
 "PO-Revision-Date: 2026-02-21 23:05+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -4274,32 +4274,40 @@ msgstr "Irteera esanguratsuetako bat jada ez dago erabilgarri"
 msgid "Disabling all outputs through configuration changes is not allowed"
 msgstr "Konfigurazio aldaketen bidez irteera denak ezgaitzea ez da uzten"
 
-#: wayland/outputmanagement_v2.cpp:631
+#: wayland/outputmanagement_v2.cpp:630
+#, kde-format
+msgid "%1 cannot mirror itself"
+msgstr ""
+
+#: wayland/outputmanagement_v2.cpp:637
 #, kde-format
 msgid "Cannot add a custom mode with an empty size"
 msgstr "Ezin da gehitu neurria hutsik duen neurriko modu bat"
 
-#: wayland/outputmanagement_v2.cpp:635
+#: wayland/outputmanagement_v2.cpp:641
 #, kde-format
 msgid "Cannot add a custom mode with a refresh rate of zero Hz"
 msgstr "Ezin da zero Hz-ko freskatze-tasa duen neurriko modu bat gehitu"
 
-#: wayland/outputmanagement_v2.cpp:646
-#, kde-format
-msgid "Position of output %s is way too negative (%d, %d)"
+#: wayland/outputmanagement_v2.cpp:652
+#, fuzzy, kde-format
+#| msgid "Position of output %s is way too negative (%d, %d)"
+msgid "Position of output %1 is way too negative (%2, %3)"
 msgstr "%s irteeraren kokapena negatiboegia da (%d, %d)"
 
-#: wayland/outputmanagement_v2.cpp:649
-#, kde-format
-msgid "Position of enabled output %s is negative (%d, %d)"
+#: wayland/outputmanagement_v2.cpp:655
+#, fuzzy, kde-format
+#| msgid "Position of enabled output %s is negative (%d, %d)"
+msgid "Position of enabled output %1 is negative (%2, %3)"
 msgstr "Gaitutako %s irteeraren kokapena negatiboa da (%d, %d)"
 
-#: wayland/outputmanagement_v2.cpp:653
-#, kde-format
-msgid "Position of output %s is way too large (%d, %d)"
+#: wayland/outputmanagement_v2.cpp:659
+#, fuzzy, kde-format
+#| msgid "Position of output %s is way too large (%d, %d)"
+msgid "Position of output %1 is way too large (%2, %3)"
 msgstr "%s irteeren kokapena handiegia da (%d, %d)"
 
-#: wayland/outputmanagement_v2.cpp:670
+#: wayland/outputmanagement_v2.cpp:676
 #, kde-format
 msgid "The driver rejected the output configuration"
 msgstr "Gidariak irteera konfigurazioa errefusatu du"
