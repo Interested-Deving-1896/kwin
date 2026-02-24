@@ -284,3 +284,14 @@ target_link_libraries(testRegion
 )
 add_test(NAME kwin-testRegion COMMAND testRegion)
 ecm_mark_as_test(testRegion)
+
+########################################################
+# Test RegionF
+########################################################
+add_executable(testRegionF test_regionf.cpp)
+target_link_libraries(testRegionF
+    Qt::Test
+    kwin
+)
+add_test(NAME kwin-testRegionF COMMAND testRegionF)
+ecm_mark_as_test(testRegionF)
