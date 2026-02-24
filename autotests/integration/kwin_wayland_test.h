@@ -143,6 +143,7 @@ private:
     void createVirtualInputDevices();
     void destroyVirtualInputDevices();
 
+    QTemporaryDir m_temporaryHome;
     std::unique_ptr<WaylandServer> m_waylandServer;
 #if KWIN_BUILD_X11
     std::unique_ptr<Xwl::Xwayland> m_xwayland;

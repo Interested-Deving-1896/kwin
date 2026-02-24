@@ -57,20 +57,12 @@ namespace KWin
 WaylandTestApplication::WaylandTestApplication(int &argc, char **argv, bool runOnKMS)
     : Application(argc, argv)
 {
-    QStandardPaths::setTestModeEnabled(true);
-
-    const QStringList configs{
-        QStringLiteral("kaccessrc"),
-        QStringLiteral("kglobalshortcutsrc"),
-        QStringLiteral("kcminputrc"),
-        QStringLiteral("kxkbrc"),
-        QStringLiteral("kwinoutputconfig.json"),
-    };
-    for (const QString &config : configs) {
-        if (const QString &fileName = QStandardPaths::locate(QStandardPaths::ConfigLocation, config); !fileName.isEmpty()) {
-            QFile::remove(fileName);
-        }
+    // create a temporary folder for test configs
+    if (!m_temporaryHome.isValid() || !qputenv("HOME", qPrintable(m_temporaryHome.path()))) {
+        qFatal("Couldn't create temporary home folder for the test");
+        return;
     }
+    QStandardPaths::setTestModeEnabled(true);
 
     QIcon::setThemeName(QStringLiteral("breeze"));
 #if KWIN_BUILD_ACTIVITIES
