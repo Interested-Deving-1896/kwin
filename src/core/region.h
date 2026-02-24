@@ -18,7 +18,11 @@ namespace KWin
 {
 
 /*!
- * The Region type represents a collection of rectangles to specify the area for drawing or clipping.
+ * \class KWin::Region
+ * \inmodule KWin
+ * \inheaderfile core/region.h
+ *
+ * \brief The Region type represents a collection of rectangles to specify the area for drawing or clipping.
  *
  * The Region stores rectangles in the y-x lexicographical order. In other words, the rectangles
  * are sorted by the top coordinate first, from top to bottom. If two rectangles have the same top
