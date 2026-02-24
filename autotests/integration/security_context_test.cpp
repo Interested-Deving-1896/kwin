@@ -24,8 +24,6 @@
 namespace KWin
 {
 
-static const QString s_socketName = QStringLiteral("wayland_test_security_context-0");
-
 class SecurityContextTest : public QObject
 {
     Q_OBJECT
@@ -40,7 +38,7 @@ private Q_SLOTS:
 
 void SecurityContextTest::initTestCase()
 {
-    QVERIFY(waylandServer()->init(s_socketName));
+    QVERIFY(waylandServer()->init(qAppName()));
     kwinApp()->start();
 }
 

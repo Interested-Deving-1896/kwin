@@ -29,8 +29,6 @@ Q_DECLARE_METATYPE(KWin::MaximizeMode)
 namespace KWin
 {
 
-static const QString s_socketName = QStringLiteral("wayland_test_kwin_transient_placement-0");
-
 #if KWIN_BUILD_X11
 static X11Window *createWindow(xcb_connection_t *connection, const Rect &geometry, std::function<void(xcb_window_t)> setup = {})
 {
@@ -92,7 +90,7 @@ private:
 void TilesTest::initTestCase()
 {
     qRegisterMetaType<KWin::Window *>();
-    QVERIFY(waylandServer()->init(s_socketName));
+    QVERIFY(waylandServer()->init(qAppName()));
 
     kwinApp()->start();
     Test::setOutputConfig({

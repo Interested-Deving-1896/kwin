@@ -28,7 +28,6 @@
 
 using namespace KWin;
 
-static const QString s_socketName = QStringLiteral("wayland_test_kwin_input_capture=0");
 static QString kwinInputCapturePath = QStringLiteral("/org/kde/KWin/EIS/InputCapture");
 static QString kwinInputCaptureManagerInterface = QStringLiteral("org.kde.KWin.EIS.InputCaptureManager");
 static QString kwinInputCaptureInterface = QStringLiteral("org.kde.KWin.EIS.InputCapture");
@@ -104,7 +103,7 @@ void TestInputCapture::cleanup()
 
 void TestInputCapture::initTestCase()
 {
-    QVERIFY(waylandServer()->init(s_socketName));
+    QVERIFY(waylandServer()->init(qAppName()));
     kwinApp()->start();
     Test::setOutputConfig({Rect(0, 0, 1280, 1024)});
     QVERIFY(kwinApp()->pluginManager()->loadedPlugins().contains("eis"));

@@ -25,8 +25,6 @@ Q_DECLARE_METATYPE(KWin::Layer)
 namespace KWin
 {
 
-static const QString s_socketName = QStringLiteral("wayland_test_kwin_layershellv1window-0");
-
 class LayerShellV1WindowTest : public QObject
 {
     Q_OBJECT
@@ -62,7 +60,7 @@ private Q_SLOTS:
 
 void LayerShellV1WindowTest::initTestCase()
 {
-    QVERIFY(waylandServer()->init(s_socketName));
+    QVERIFY(waylandServer()->init(qAppName()));
 
     kwinApp()->start();
     Test::setOutputConfig({

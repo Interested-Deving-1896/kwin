@@ -21,8 +21,6 @@
 
 using namespace KWin;
 
-static const QString s_socketName = QStringLiteral("wayland_test_kwin_toplevel_drag-0");
-
 class TestToplevelDrag : public QObject
 {
     Q_OBJECT
@@ -48,7 +46,7 @@ void TestToplevelDrag::cleanup()
 
 void TestToplevelDrag::initTestCase()
 {
-    QVERIFY(waylandServer()->init(s_socketName));
+    QVERIFY(waylandServer()->init(qAppName()));
     kwinApp()->start();
     Test::setOutputConfig({Rect(0, 0, 1280, 1024)});
 }

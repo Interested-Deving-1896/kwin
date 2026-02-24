@@ -34,8 +34,6 @@ using namespace std::chrono_literals;
 namespace KWin
 {
 
-static const QString s_socketName = QStringLiteral("test_drm");
-
 class DrmTest : public QObject
 {
     Q_OBJECT
@@ -331,7 +329,7 @@ void DrmTest::initTestCase()
     // make sure overlays are allowed
     qputenv("KWIN_USE_OVERLAYS", "1");
 
-    QVERIFY(waylandServer()->init(s_socketName));
+    QVERIFY(waylandServer()->init(qAppName()));
     kwinApp()->start();
 
     const auto allOutputs = kwinApp()->outputBackend()->outputs();

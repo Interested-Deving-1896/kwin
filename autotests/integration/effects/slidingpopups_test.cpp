@@ -20,7 +20,6 @@
 #include <KWayland/Client/surface.h>
 
 using namespace KWin;
-static const QString s_socketName = QStringLiteral("wayland_test_effects_slidingpopups-0");
 
 class SlidingPopupsTest : public QObject
 {
@@ -43,7 +42,7 @@ void SlidingPopupsTest::initTestCase()
     qputenv("XDG_DATA_DIRS", QCoreApplication::applicationDirPath().toUtf8());
     qRegisterMetaType<KWin::Window *>();
     qRegisterMetaType<KWin::Effect *>();
-    QVERIFY(waylandServer()->init(s_socketName));
+    QVERIFY(waylandServer()->init(qAppName()));
 
     // disable all effects - we don't want to have it interact with the rendering
     auto config = KSharedConfig::openConfig(QString(), KConfig::SimpleConfig);

@@ -32,8 +32,6 @@
 using namespace KWin;
 using namespace std::chrono_literals;
 
-static const QString s_socketName = QStringLiteral("wayland_test_effects_scripts-0");
-
 class ScriptedEffectsTest : public QObject
 {
     Q_OBJECT
@@ -127,7 +125,7 @@ void ScriptedEffectsTest::initTestCase()
     }
     qRegisterMetaType<KWin::Window *>();
     qRegisterMetaType<KWin::Effect *>();
-    QVERIFY(waylandServer()->init(s_socketName));
+    QVERIFY(waylandServer()->init(qAppName()));
 
     // disable all effects - we don't want to have it interact with the rendering
     auto config = KSharedConfig::openConfig(QString(), KConfig::SimpleConfig);

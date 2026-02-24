@@ -25,8 +25,6 @@
 
 using namespace KWin;
 
-static const QString s_socketName = QStringLiteral("wayland_test_kwin_tabbox-0");
-
 class TabBoxTest : public QObject
 {
     Q_OBJECT
@@ -45,7 +43,7 @@ private Q_SLOTS:
 void TabBoxTest::initTestCase()
 {
     qRegisterMetaType<KWin::Window *>();
-    QVERIFY(waylandServer()->init(s_socketName));
+    QVERIFY(waylandServer()->init(qAppName()));
 
     KSharedConfigPtr c = KSharedConfig::openConfig(QString(), KConfig::SimpleConfig);
     c->group(QStringLiteral("TabBox")).writeEntry("ShowTabBox", false);

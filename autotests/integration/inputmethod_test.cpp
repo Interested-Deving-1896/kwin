@@ -49,8 +49,6 @@
 using namespace KWin;
 using KWin::VirtualKeyboardDBus;
 
-static const QString s_socketName = QStringLiteral("wayland_test_kwin_inputmethod-0");
-
 class InputMethodTest : public QObject
 {
     Q_OBJECT
@@ -93,7 +91,7 @@ void InputMethodTest::initTestCase()
     qRegisterMetaType<KWin::Window *>();
     qRegisterMetaType<KWayland::Client::Output *>();
 
-    QVERIFY(waylandServer()->init(s_socketName));
+    QVERIFY(waylandServer()->init(qAppName()));
 
     static_cast<WaylandTestApplication *>(kwinApp())->setInputMethodServerToStart("internal");
     kwinApp()->start();

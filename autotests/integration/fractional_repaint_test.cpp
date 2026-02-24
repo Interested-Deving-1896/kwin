@@ -16,8 +16,6 @@
 namespace KWin
 {
 
-static const QString s_socketName = QStringLiteral("wayland_test_fractional_repaint-0");
-
 class FractionalRepaintTest : public QObject
 {
     Q_OBJECT
@@ -40,7 +38,7 @@ void FractionalRepaintTest::initTestCase()
 
     qRegisterMetaType<Window *>();
 
-    QVERIFY(waylandServer()->init(s_socketName));
+    QVERIFY(waylandServer()->init(qAppName()));
     kwinApp()->start();
 
     QVERIFY(Test::setupWaylandConnection(Test::AdditionalWaylandInterface::Seat | Test::AdditionalWaylandInterface::PresentationTime));

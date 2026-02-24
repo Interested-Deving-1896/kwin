@@ -41,8 +41,6 @@ Q_DECLARE_METATYPE(Qt::WindowFrameSection)
 namespace KWin
 {
 
-static const QString s_socketName = QStringLiteral("wayland_test_kwin_decoration_input-0");
-
 class DecorationInputTest : public QObject
 {
     Q_OBJECT
@@ -119,7 +117,7 @@ void DecorationInputTest::initTestCase()
 {
     qRegisterMetaType<KWin::Window *>();
     qRegisterMetaType<KWin::InternalWindow *>();
-    QVERIFY(waylandServer()->init(s_socketName));
+    QVERIFY(waylandServer()->init(qAppName()));
 
     // change some options
     KSharedConfig::Ptr config = KSharedConfig::openConfig(QString(), KConfig::SimpleConfig);

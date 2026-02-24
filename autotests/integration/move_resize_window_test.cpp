@@ -31,8 +31,6 @@ Q_DECLARE_METATYPE(KWin::MaximizeMode)
 namespace KWin
 {
 
-static const QString s_socketName = QStringLiteral("wayland_test_kwin_quick_tiling-0");
-
 class MoveResizeWindowTest : public QObject
 {
     Q_OBJECT
@@ -77,7 +75,7 @@ void MoveResizeWindowTest::initTestCase()
 {
     qRegisterMetaType<KWin::Window *>();
     qRegisterMetaType<KWin::MaximizeMode>("MaximizeMode");
-    QVERIFY(waylandServer()->init(s_socketName));
+    QVERIFY(waylandServer()->init(qAppName()));
     kwinApp()->start();
     Test::setOutputConfig({Rect(0, 0, 1280, 1024)});
     const auto outputs = workspace()->outputs();

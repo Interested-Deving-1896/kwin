@@ -18,8 +18,6 @@
 namespace KWin
 {
 
-static const QString s_socketName = QStringLiteral("wayland_test_kwin_fakeinput-0");
-
 class FakeInputTest : public QObject
 {
     Q_OBJECT
@@ -45,7 +43,7 @@ private:
 
 void FakeInputTest::initTestCase()
 {
-    QVERIFY(waylandServer()->init(s_socketName));
+    QVERIFY(waylandServer()->init(qAppName()));
     kwinApp()->start();
     Test::setOutputConfig({
         Rect(0, 0, 1280, 1024),

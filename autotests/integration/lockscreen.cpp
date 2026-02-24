@@ -45,8 +45,6 @@ Q_DECLARE_METATYPE(Qt::Orientation)
 namespace KWin
 {
 
-static const QString s_socketName = QStringLiteral("wayland_test_kwin_lock_screen-0");
-
 class LockScreenTest : public QObject
 {
     Q_OBJECT
@@ -195,7 +193,7 @@ void LockScreenTest::initTestCase()
     qRegisterMetaType<KWin::Window *>();
     qRegisterMetaType<KWin::ElectricBorder>("ElectricBorder");
 
-    QVERIFY(waylandServer()->init(s_socketName));
+    QVERIFY(waylandServer()->init(qAppName()));
 
     kwinApp()->start();
     Test::setOutputConfig({

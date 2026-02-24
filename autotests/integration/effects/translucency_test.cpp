@@ -23,7 +23,6 @@
 #include <xcb/xcb_icccm.h>
 
 using namespace KWin;
-static const QString s_socketName = QStringLiteral("wayland_test_effects_translucency-0");
 
 class TranslucencyTest : public QObject
 {
@@ -45,7 +44,7 @@ void TranslucencyTest::initTestCase()
     qputenv("XDG_DATA_DIRS", QCoreApplication::applicationDirPath().toUtf8());
     qRegisterMetaType<KWin::Window *>();
     qRegisterMetaType<KWin::Effect *>();
-    QVERIFY(waylandServer()->init(s_socketName));
+    QVERIFY(waylandServer()->init(qAppName()));
 
     // disable all effects - we don't want to have it interact with the rendering
     auto config = KSharedConfig::openConfig(QString(), KConfig::SimpleConfig);

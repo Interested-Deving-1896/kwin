@@ -28,8 +28,6 @@
 
 using namespace KWin;
 
-static const QString s_socketName = QStringLiteral("wayland_test_kwin_maximized-0");
-
 class TestMaximized : public QObject
 {
     Q_OBJECT
@@ -49,7 +47,7 @@ private Q_SLOTS:
 void TestMaximized::initTestCase()
 {
     qRegisterMetaType<KWin::Window *>();
-    QVERIFY(waylandServer()->init(s_socketName));
+    QVERIFY(waylandServer()->init(qAppName()));
 
     kwinApp()->setConfig(KSharedConfig::openConfig(QString(), KConfig::SimpleConfig));
 

@@ -23,8 +23,6 @@
 namespace KWin
 {
 
-static const QString s_socketName = QStringLiteral("wayland_test_kwin_slow_keys-0");
-
 class SlowKeysTest : public QObject
 {
     Q_OBJECT
@@ -45,7 +43,7 @@ void SlowKeysTest::initTestCase()
     kaccessConfig.sync();
 
     qRegisterMetaType<Window *>();
-    QVERIFY(waylandServer()->init(s_socketName));
+    QVERIFY(waylandServer()->init(qAppName()));
 
     qputenv("XKB_DEFAULT_RULES", "evdev");
 

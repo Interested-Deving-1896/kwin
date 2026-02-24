@@ -35,8 +35,6 @@
 
 using namespace KWin;
 
-static const QString s_socketName = QStringLiteral("wayland_test_kwin_x11-key-read-0");
-
 enum class State {
     Press,
     Release
@@ -77,7 +75,7 @@ void X11KeyReadTest::initTestCase_data()
 
 void X11KeyReadTest::initTestCase()
 {
-    QVERIFY(waylandServer()->init(s_socketName));
+    QVERIFY(waylandServer()->init(qAppName()));
 
     qputenv("KWIN_XKB_DEFAULT_KEYMAP", "1");
     qputenv("XKB_DEFAULT_RULES", "evdev");

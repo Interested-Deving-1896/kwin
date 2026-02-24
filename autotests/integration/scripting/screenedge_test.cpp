@@ -25,8 +25,6 @@ Q_DECLARE_METATYPE(KWin::ElectricBorder)
 using namespace std::chrono_literals;
 using namespace KWin;
 
-static const QString s_socketName = QStringLiteral("wayland_test_kwin_scripting_screenedge-0");
-
 class ScreenEdgeTest : public QObject
 {
     Q_OBJECT
@@ -48,7 +46,7 @@ private:
 
 void ScreenEdgeTest::initTestCase()
 {
-    QVERIFY(waylandServer()->init(s_socketName));
+    QVERIFY(waylandServer()->init(qAppName()));
 
     // empty config to have defaults
     auto config = KSharedConfig::openConfig(QString(), KConfig::SimpleConfig);

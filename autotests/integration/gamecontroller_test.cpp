@@ -34,7 +34,6 @@ Q_IMPORT_PLUGIN(KWinIdleTimePoller)
 
 using namespace KWin;
 
-static const QString s_socketName = QStringLiteral("wayland_test_kwin_gamecontroller-0");
 static const QString s_pluginName = QStringLiteral("gamecontroller");
 
 class TestGameController : public QObject
@@ -77,7 +76,7 @@ void TestGameController::initTestCase()
     }
 
     qRegisterMetaType<KWin::Window *>();
-    QVERIFY(waylandServer()->init(s_socketName));
+    QVERIFY(waylandServer()->init(qAppName()));
     kwinApp()->start();
     Test::setOutputConfig({
         QRect(0, 0, 1280, 1024),

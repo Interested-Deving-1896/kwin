@@ -36,8 +36,6 @@ using namespace KWin;
 typedef std::function<QPointF(const RectF &)> PointerFunc;
 Q_DECLARE_METATYPE(PointerFunc)
 
-static const QString s_socketName = QStringLiteral("wayland_test_kwin_pointer_constraints-0");
-
 class TestPointerConstraints : public QObject
 {
     Q_OBJECT
@@ -56,7 +54,7 @@ void TestPointerConstraints::initTestCase()
 {
     qRegisterMetaType<PointerFunc>();
     qRegisterMetaType<KWin::Window *>();
-    QVERIFY(waylandServer()->init(s_socketName));
+    QVERIFY(waylandServer()->init(qAppName()));
 
     // set custom config which disables the OnScreenNotification
     KSharedConfig::Ptr config = KSharedConfig::openConfig(QString(), KConfig::SimpleConfig);

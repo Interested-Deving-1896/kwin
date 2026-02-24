@@ -19,8 +19,6 @@
 
 using namespace KWin;
 
-static const QString s_socketName = QStringLiteral("wayland_test_effects_toplevel_open_close_animation-0");
-
 class ToplevelOpenCloseAnimationTest : public QObject
 {
     Q_OBJECT
@@ -45,7 +43,7 @@ void ToplevelOpenCloseAnimationTest::initTestCase()
     qputenv("XDG_DATA_DIRS", QCoreApplication::applicationDirPath().toUtf8());
 
     qRegisterMetaType<KWin::Window *>();
-    QVERIFY(waylandServer()->init(s_socketName));
+    QVERIFY(waylandServer()->init(qAppName()));
 
     auto config = KSharedConfig::openConfig(QString(), KConfig::SimpleConfig);
     KConfigGroup plugins(config, QStringLiteral("Plugins"));

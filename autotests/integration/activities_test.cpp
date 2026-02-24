@@ -26,8 +26,6 @@
 namespace KWin
 {
 
-static const QString s_socketName = QStringLiteral("wayland_test_kwin_activities-0");
-
 class ActivitiesTest : public QObject
 {
     Q_OBJECT
@@ -44,7 +42,7 @@ private:
 void ActivitiesTest::initTestCase()
 {
     qRegisterMetaType<KWin::Window *>();
-    QVERIFY(waylandServer()->init(s_socketName));
+    QVERIFY(waylandServer()->init(qAppName()));
     kwinApp()->setUseKActivities(true);
     kwinApp()->start();
     Test::setOutputConfig({

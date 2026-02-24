@@ -32,8 +32,6 @@
 
 using namespace KWin;
 
-static const QString s_socketName = QStringLiteral("wayland_test_kwin_keyboard_laout-0");
-
 class KeyboardLayoutTest : public QObject
 {
     Q_OBJECT
@@ -128,7 +126,7 @@ void KeyboardLayoutTest::callSession(const QString &method)
 void KeyboardLayoutTest::initTestCase()
 {
     qRegisterMetaType<KWin::Window *>();
-    QVERIFY(waylandServer()->init(s_socketName));
+    QVERIFY(waylandServer()->init(qAppName()));
 
     kwinApp()->setKxkbConfig(KSharedConfig::openConfig(QStringLiteral("kxkbrc"), KConfig::NoGlobals));
 

@@ -22,8 +22,6 @@
 namespace KWin
 {
 
-static const QString s_socketName = QStringLiteral("wayland_test_kwin_dont_crash_reinitialize_compositor-0");
-
 class DontCrashReinitializeCompositorTest : public QObject
 {
     Q_OBJECT
@@ -46,7 +44,7 @@ void DontCrashReinitializeCompositorTest::initTestCase()
     qputenv("XDG_DATA_DIRS", QCoreApplication::applicationDirPath().toUtf8());
 
     qRegisterMetaType<KWin::Window *>();
-    QVERIFY(waylandServer()->init(s_socketName));
+    QVERIFY(waylandServer()->init(qAppName()));
 
     auto config = KSharedConfig::openConfig(QString(), KConfig::SimpleConfig);
     KConfigGroup plugins(config, QStringLiteral("Plugins"));

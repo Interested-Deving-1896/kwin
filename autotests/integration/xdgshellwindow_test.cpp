@@ -48,8 +48,6 @@
 
 using namespace KWin;
 
-static const QString s_socketName = QStringLiteral("wayland_test_kwin_xdgshellwindow-0");
-
 class TestXdgShellWindow : public QObject
 {
     Q_OBJECT
@@ -252,7 +250,7 @@ void TestXdgShellWindow::initTestCase()
     qRegisterMetaType<KWin::Window *>();
     qRegisterMetaType<KWayland::Client::Output *>();
 
-    QVERIFY(waylandServer()->init(s_socketName));
+    QVERIFY(waylandServer()->init(qAppName()));
 
     kwinApp()->start();
 }
@@ -814,7 +812,7 @@ void TestXdgShellWindow::testUnresponsiveWindow()
         env.insert(QStringLiteral("WAYLAND_SOCKET"), QByteArray::number(socket));
         env.remove("WAYLAND_DISPLAY");
     } else {
-        env.insert("WAYLAND_DISPLAY", s_socketName);
+        env.insert("WAYLAND_DISPLAY", waylandServer()->socketName());
     }
     process->setProcessEnvironment(env);
     process->setProcessChannelMode(QProcess::ForwardedChannels);

@@ -27,8 +27,6 @@
 
 using namespace KWin;
 
-static const QString s_socketName = QStringLiteral("wayland_test_kwin_window_selection-0");
-
 class TestWindowSelection : public QObject
 {
     Q_OBJECT
@@ -51,7 +49,7 @@ private Q_SLOTS:
 void TestWindowSelection::initTestCase()
 {
     qRegisterMetaType<KWin::Window *>();
-    QVERIFY(waylandServer()->init(s_socketName));
+    QVERIFY(waylandServer()->init(qAppName()));
     qputenv("XKB_DEFAULT_RULES", "evdev");
 
     kwinApp()->start();

@@ -27,8 +27,6 @@
 namespace KWin
 {
 
-static const QString s_socketName = QStringLiteral("wayland_test_kwin_touch_input-0");
-
 class TouchInputTest : public QObject
 {
     Q_OBJECT
@@ -60,7 +58,7 @@ private:
 void TouchInputTest::initTestCase()
 {
     qRegisterMetaType<KWin::Window *>();
-    QVERIFY(waylandServer()->init(s_socketName));
+    QVERIFY(waylandServer()->init(qAppName()));
 
     kwinApp()->start();
     Test::setOutputConfig({

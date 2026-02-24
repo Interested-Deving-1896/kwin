@@ -23,8 +23,6 @@
 namespace KWin
 {
 
-static const QString s_socketName = QStringLiteral("wayland_test_kwin_kbd_input-0");
-
 class KeyboardInputTest : public QObject
 {
     Q_OBJECT
@@ -54,7 +52,7 @@ private:
 
 void KeyboardInputTest::initTestCase()
 {
-    QVERIFY(waylandServer()->init(s_socketName));
+    QVERIFY(waylandServer()->init(qAppName()));
     kwinApp()->start();
     Test::setOutputConfig({
         Rect(0, 0, 1280, 1024),

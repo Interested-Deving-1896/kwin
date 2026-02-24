@@ -16,8 +16,6 @@
 
 using namespace KWin;
 
-static const QString s_socketName = QStringLiteral("wayland_test_kwin_showing_desktop-0");
-
 class ShowingDesktopTest : public QObject
 {
     Q_OBJECT
@@ -37,7 +35,7 @@ private Q_SLOTS:
 void ShowingDesktopTest::initTestCase()
 {
     qRegisterMetaType<KWin::Window *>();
-    QVERIFY(waylandServer()->init(s_socketName));
+    QVERIFY(waylandServer()->init(qAppName()));
     kwinApp()->start();
     Test::setOutputConfig({
         Rect(0, 0, 1280, 1024),

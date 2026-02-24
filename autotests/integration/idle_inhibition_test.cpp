@@ -19,8 +19,6 @@
 
 using namespace KWin;
 
-static const QString s_socketName = QStringLiteral("wayland_test_kwin_idle_inhbition_test-0");
-
 class TestIdleInhibition : public QObject
 {
     Q_OBJECT
@@ -42,7 +40,7 @@ void TestIdleInhibition::initTestCase()
 {
     qRegisterMetaType<KWin::Window *>();
 
-    QVERIFY(waylandServer()->init(s_socketName));
+    QVERIFY(waylandServer()->init(qAppName()));
     kwinApp()->start();
     Test::setOutputConfig({
         Rect(0, 0, 1280, 1024),

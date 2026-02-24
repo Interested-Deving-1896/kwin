@@ -37,7 +37,6 @@
 namespace KWin
 {
 
-static const QString s_socketName = QStringLiteral("wayland_test_xwayland_dnd-0");
 static const int xdndVersion = 5;
 
 class X11Display;
@@ -997,7 +996,7 @@ void XwaylandDndTest::initTestCase()
         maybeResetXwaylandCursor();
     });
 
-    QVERIFY(waylandServer()->init(s_socketName));
+    QVERIFY(waylandServer()->init(qAppName()));
     kwinApp()->start();
     Test::setOutputConfig({
         Rect(0, 0, 1280, 1024),

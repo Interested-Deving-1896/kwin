@@ -20,8 +20,6 @@
 namespace KWin
 {
 
-static const QString s_socketName = QStringLiteral("wayland_test_kwin_xwayland_server_restart-0");
-
 class XwaylandServerRestartTest : public QObject
 {
     Q_OBJECT
@@ -33,7 +31,7 @@ private Q_SLOTS:
 
 void XwaylandServerRestartTest::initTestCase()
 {
-    QVERIFY(waylandServer()->init(s_socketName));
+    QVERIFY(waylandServer()->init(qAppName()));
 
     KSharedConfig::Ptr config = KSharedConfig::openConfig(QString(), KConfig::SimpleConfig);
     KConfigGroup xwaylandGroup = config->group(QStringLiteral("Xwayland"));

@@ -20,8 +20,6 @@
 namespace KWin
 {
 
-static const QString s_socketName = QStringLiteral("wayland_test_mouseactions-0");
-
 class MouseActionsTest : public QObject
 {
     Q_OBJECT
@@ -42,7 +40,7 @@ void MouseActionsTest::initTestCase()
 {
     qRegisterMetaType<Window *>();
 
-    QVERIFY(waylandServer()->init(s_socketName));
+    QVERIFY(waylandServer()->init(qAppName()));
 
     kwinApp()->start();
     Test::setOutputConfig({

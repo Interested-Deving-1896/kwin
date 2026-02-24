@@ -35,8 +35,6 @@
 namespace KWin
 {
 
-static const QString s_socketName = QStringLiteral("wayland_test_xwayland_selection-0");
-
 class X11Display;
 
 template<typename Offer>
@@ -561,7 +559,7 @@ void XwaylandSelectionTest::initTestCase()
 {
     qRegisterMetaType<Window *>();
 
-    QVERIFY(waylandServer()->init(s_socketName));
+    QVERIFY(waylandServer()->init(qAppName()));
     kwinApp()->start();
     Test::setOutputConfig({
         Rect(0, 0, 1280, 1024),

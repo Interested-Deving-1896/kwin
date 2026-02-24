@@ -33,8 +33,6 @@
 using namespace KWin;
 using namespace std::chrono_literals;
 
-static const QString s_socketName = QStringLiteral("wayland_test_x11_window-0");
-
 class X11WindowTest : public QObject
 {
     Q_OBJECT
@@ -143,7 +141,7 @@ void X11WindowTest::initTestCase_data()
 void X11WindowTest::initTestCase()
 {
     qRegisterMetaType<KWin::Window *>();
-    QVERIFY(waylandServer()->init(s_socketName));
+    QVERIFY(waylandServer()->init(qAppName()));
     kwinApp()->setConfig(KSharedConfig::openConfig(QString(), KConfig::SimpleConfig));
 
     kwinApp()->start();

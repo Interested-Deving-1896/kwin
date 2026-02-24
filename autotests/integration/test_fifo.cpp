@@ -29,8 +29,6 @@ using namespace std::chrono_literals;
 namespace KWin
 {
 
-static const QString s_socketName = QStringLiteral("wayland_test_fifo-0");
-
 class FifoTest : public QObject
 {
     Q_OBJECT
@@ -68,7 +66,7 @@ void FifoTest::initTestCase()
 {
     qRegisterMetaType<Window *>();
 
-    QVERIFY(waylandServer()->init(s_socketName));
+    QVERIFY(waylandServer()->init(qAppName()));
     kwinApp()->start();
 }
 

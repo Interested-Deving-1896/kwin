@@ -22,8 +22,6 @@
 namespace KWin
 {
 
-static const QString s_socketName = QStringLiteral("wayland_test_kwin_mouse_keys-0");
-
 class MouseKeysTest : public QObject
 {
     Q_OBJECT
@@ -42,7 +40,7 @@ void MouseKeysTest::initTestCase()
     kaccessConfig.sync();
 
     qRegisterMetaType<KWin::Window *>();
-    QVERIFY(waylandServer()->init(s_socketName));
+    QVERIFY(waylandServer()->init(qAppName()));
 
     qputenv("XKB_DEFAULT_RULES", "evdev");
 

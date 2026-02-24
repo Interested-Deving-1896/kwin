@@ -32,8 +32,6 @@
 
 using namespace KWin;
 
-static const QString s_socketName = QStringLiteral("wayland_test_kwin_globalshortcuts-0");
-
 class GlobalShortcutsTest : public QObject
 {
     Q_OBJECT
@@ -59,7 +57,7 @@ void GlobalShortcutsTest::initTestCase()
 {
     qRegisterMetaType<KWin::Window *>();
     qRegisterMetaType<KWin::InternalWindow *>();
-    QVERIFY(waylandServer()->init(s_socketName));
+    QVERIFY(waylandServer()->init(qAppName()));
 
     kwinApp()->setConfig(KSharedConfig::openConfig(QString(), KConfig::SimpleConfig));
     qputenv("KWIN_XKB_DEFAULT_KEYMAP", "1");

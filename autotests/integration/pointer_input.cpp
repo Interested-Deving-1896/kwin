@@ -64,8 +64,6 @@ static PlatformCursorImage loadReferenceThemeCursor(const CursorShape &shape)
     return loadReferenceThemeCursor(shape.name());
 }
 
-static const QString s_socketName = QStringLiteral("wayland_test_kwin_pointer_input-0");
-
 class PointerInputTest : public QObject
 {
     Q_OBJECT
@@ -121,7 +119,7 @@ private:
 void PointerInputTest::initTestCase()
 {
     qRegisterMetaType<KWin::Window *>();
-    QVERIFY(waylandServer()->init(s_socketName));
+    QVERIFY(waylandServer()->init(qAppName()));
 
     kwinApp()->setConfig(KSharedConfig::openConfig(QString(), KConfig::SimpleConfig));
 

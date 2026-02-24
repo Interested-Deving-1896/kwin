@@ -24,8 +24,6 @@
 namespace KWin
 {
 
-static const QString s_socketName = QStringLiteral("wayland_test_kwin_bounce_keys-0");
-
 class BounceKeysTest : public QObject
 {
     Q_OBJECT
@@ -44,7 +42,7 @@ void BounceKeysTest::initTestCase()
     kaccessConfig.sync();
 
     qRegisterMetaType<KWin::Window *>();
-    QVERIFY(waylandServer()->init(s_socketName));
+    QVERIFY(waylandServer()->init(qAppName()));
 
     qputenv("XKB_DEFAULT_RULES", "evdev");
 

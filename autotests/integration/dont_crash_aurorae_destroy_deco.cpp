@@ -23,8 +23,6 @@
 namespace KWin
 {
 
-static const QString s_socketName = QStringLiteral("wayland_test_kwin_dont_crash_aurorae_destroy_deco-0");
-
 class DontCrashAuroraeDestroyDecoTest : public QObject
 {
     Q_OBJECT
@@ -41,7 +39,7 @@ void DontCrashAuroraeDestroyDecoTest::initTestCase()
         return;
     }
     qRegisterMetaType<KWin::Window *>();
-    QVERIFY(waylandServer()->init(s_socketName));
+    QVERIFY(waylandServer()->init(qAppName()));
 
     KSharedConfig::Ptr config = KSharedConfig::openConfig(QString(), KConfig::SimpleConfig);
     config->group(QStringLiteral("org.kde.kdecoration2")).writeEntry("library", "org.kde.kwin.aurorae");

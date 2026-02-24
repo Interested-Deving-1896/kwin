@@ -25,8 +25,6 @@ using KWin::VirtualKeyboardDBus;
 using namespace KWin;
 using namespace KWin::Test;
 
-static const QString s_socketName = QStringLiteral("wayland_test_kwin_virtualkeyboarddbus-0");
-
 class VirtualKeyboardDBusTest : public QObject
 {
     Q_OBJECT
@@ -42,7 +40,7 @@ private Q_SLOTS:
 void VirtualKeyboardDBusTest::initTestCase()
 {
     QDBusConnection::sessionBus().registerService(QStringLiteral("org.kde.kwin.testvirtualkeyboard"));
-    QVERIFY(waylandServer()->init(s_socketName));
+    QVERIFY(waylandServer()->init(qAppName()));
 
     static_cast<WaylandTestApplication *>(kwinApp())->setInputMethodServerToStart("internal");
     kwinApp()->start();

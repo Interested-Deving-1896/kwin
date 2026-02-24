@@ -14,8 +14,6 @@
 namespace KWin
 {
 
-static const QString s_socketName = QStringLiteral("wayland_test_kwin_xinerama-0");
-
 class XineramaTest : public QObject
 {
     Q_OBJECT
@@ -27,7 +25,7 @@ private Q_SLOTS:
 
 void XineramaTest::initTestCase()
 {
-    QVERIFY(waylandServer()->init(s_socketName));
+    QVERIFY(waylandServer()->init(qAppName()));
     kwinApp()->start();
 }
 

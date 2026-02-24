@@ -34,8 +34,6 @@ using namespace std::chrono_literals;
 namespace KWin
 {
 
-static const QString s_socketName = QStringLiteral("wayland_test_output_changes-0");
-
 enum class DeviceType {
     Desktop,
     Laptop,
@@ -157,7 +155,7 @@ void OutputChangesTest::initTestCase()
 {
     qRegisterMetaType<Window *>();
 
-    QVERIFY(waylandServer()->init(s_socketName));
+    QVERIFY(waylandServer()->init(qAppName()));
 
     kwinApp()->start();
     Test::setOutputConfig({

@@ -27,8 +27,6 @@
 
 using namespace KWin;
 
-static const QString s_socketName = QStringLiteral("wayland_test_kwin_xdgshellwindow_rules-0");
-
 class TestXdgShellWindowRules : public QObject
 {
     Q_OBJECT
@@ -187,7 +185,7 @@ void TestXdgShellWindowRules::initTestCase()
 {
     qRegisterMetaType<KWin::Window *>();
 
-    QVERIFY(waylandServer()->init(s_socketName));
+    QVERIFY(waylandServer()->init(qAppName()));
 
     kwinApp()->start();
     Test::setOutputConfig({

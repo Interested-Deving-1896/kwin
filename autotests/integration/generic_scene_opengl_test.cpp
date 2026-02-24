@@ -19,7 +19,6 @@
 #include <QSignalSpy>
 
 using namespace KWin;
-static const QString s_socketName = QStringLiteral("wayland_test_kwin_scene_opengl-0");
 
 GenericSceneOpenGLTest::GenericSceneOpenGLTest(const QByteArray &envVariable)
     : QObject()
@@ -43,7 +42,7 @@ void GenericSceneOpenGLTest::initTestCase()
         return;
     }
     qRegisterMetaType<KWin::Window *>();
-    QVERIFY(waylandServer()->init(s_socketName));
+    QVERIFY(waylandServer()->init(qAppName()));
 
     // disable all effects - we don't want to have it interact with the rendering
     auto config = KSharedConfig::openConfig(QString(), KConfig::SimpleConfig);

@@ -27,8 +27,6 @@
 namespace KWin
 {
 
-static const QString s_socketName = QStringLiteral("wayland_test_kwin_a11ykeyboardmonitor-0");
-
 class A11yKeyboardWatcher : public QObject
 {
     Q_OBJECT
@@ -136,7 +134,7 @@ private Q_SLOTS:
 void A11yKeyboardMonitorTest::initTestCase()
 {
     qRegisterMetaType<KWin::Window *>();
-    QVERIFY(waylandServer()->init(s_socketName));
+    QVERIFY(waylandServer()->init(qAppName()));
 
     kwinApp()->start();
     Test::setOutputConfig({

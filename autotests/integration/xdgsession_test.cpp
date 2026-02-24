@@ -18,8 +18,6 @@
 
 using namespace KWin;
 
-static const QString s_socketName = QStringLiteral("wayland_test_kwin_xdgsession-0");
-
 class TestXdgSession : public QObject
 {
     Q_OBJECT
@@ -68,7 +66,7 @@ void TestXdgSession::initTestCase()
 
     qputenv("KWIN_WAYLAND_SUPPORT_XX_SESSION_MANAGER", "1");
 
-    QVERIFY(waylandServer()->init(s_socketName));
+    QVERIFY(waylandServer()->init(qAppName()));
 
     kwinApp()->start();
     Test::setOutputConfig({

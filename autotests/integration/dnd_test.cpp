@@ -35,8 +35,6 @@
 namespace KWin
 {
 
-static const QString s_socketName = QStringLiteral("wayland_test_dnd-0");
-
 static QFuture<QByteArray> readMimeTypeData(KWayland::Client::DataOffer *offer, const QString &mimeType)
 {
     auto pipe = Pipe::create(O_CLOEXEC);
@@ -113,7 +111,7 @@ void DndTest::initTestCase()
 {
     qRegisterMetaType<Window *>();
 
-    QVERIFY(waylandServer()->init(s_socketName));
+    QVERIFY(waylandServer()->init(qAppName()));
     kwinApp()->start();
     Test::setOutputConfig({
         Rect(0, 0, 1280, 1024),

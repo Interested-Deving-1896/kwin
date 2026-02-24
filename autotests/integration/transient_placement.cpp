@@ -42,8 +42,6 @@ Q_DECLARE_METATYPE(PopupLayout)
 namespace KWin
 {
 
-static const QString s_socketName = QStringLiteral("wayland_test_kwin_transient_placement-0");
-
 class TransientPlacementTest : public QObject
 {
     Q_OBJECT
@@ -59,7 +57,7 @@ private Q_SLOTS:
 void TransientPlacementTest::initTestCase()
 {
     qRegisterMetaType<KWin::Window *>();
-    QVERIFY(waylandServer()->init(s_socketName));
+    QVERIFY(waylandServer()->init(qAppName()));
 
     kwinApp()->start();
     Test::setOutputConfig({

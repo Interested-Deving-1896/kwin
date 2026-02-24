@@ -22,8 +22,6 @@
 
 using namespace KWin;
 
-static const QString s_socketName = QStringLiteral("wayland_test_kwin_virtualdesktop-0");
-
 class VirtualDesktopTest : public QObject
 {
     Q_OBJECT
@@ -42,7 +40,7 @@ private Q_SLOTS:
 void VirtualDesktopTest::initTestCase()
 {
     qRegisterMetaType<KWin::Window *>();
-    QVERIFY(waylandServer()->init(s_socketName));
+    QVERIFY(waylandServer()->init(qAppName()));
 
     kwinApp()->setConfig(KSharedConfig::openConfig(QString(), KConfig::SimpleConfig));
     qputenv("KWIN_XKB_DEFAULT_KEYMAP", "1");

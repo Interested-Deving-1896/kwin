@@ -22,8 +22,6 @@
 namespace KWin
 {
 
-static const QString s_socketName = QStringLiteral("wayland_test_kwin_window_rules-0");
-
 class WindowRuleTest : public QObject
 {
     Q_OBJECT
@@ -38,7 +36,7 @@ private Q_SLOTS:
 void WindowRuleTest::initTestCase()
 {
     qRegisterMetaType<KWin::Window *>();
-    QVERIFY(waylandServer()->init(s_socketName));
+    QVERIFY(waylandServer()->init(qAppName()));
 
     kwinApp()->start();
     Test::setOutputConfig({

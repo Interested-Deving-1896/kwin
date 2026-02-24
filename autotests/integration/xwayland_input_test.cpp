@@ -24,8 +24,6 @@
 namespace KWin
 {
 
-static const QString s_socketName = QStringLiteral("wayland_test_kwin_xwayland_input-0");
-
 class XWaylandInputTest : public QObject
 {
     Q_OBJECT
@@ -39,7 +37,7 @@ private Q_SLOTS:
 void XWaylandInputTest::initTestCase()
 {
     qRegisterMetaType<KWin::Window *>();
-    QVERIFY(waylandServer()->init(s_socketName));
+    QVERIFY(waylandServer()->init(qAppName()));
 
     kwinApp()->start();
     Test::setOutputConfig({

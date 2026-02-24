@@ -23,7 +23,6 @@
 namespace KWin
 {
 
-static const QString s_socketName = QStringLiteral("wayland_test_minimizeall-0");
 static const QString s_scriptName = QStringLiteral("minimizeall");
 
 class MinimizeAllScriptTest : public QObject
@@ -44,7 +43,7 @@ void MinimizeAllScriptTest::initTestCase()
 
     qRegisterMetaType<Window *>();
 
-    QVERIFY(waylandServer()->init(s_socketName));
+    QVERIFY(waylandServer()->init(qAppName()));
 
     kwinApp()->start();
     Test::setOutputConfig({

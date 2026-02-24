@@ -36,8 +36,6 @@ using namespace std::chrono_literals;
 namespace KWin
 {
 
-static const QString s_socketName = QStringLiteral("wayland_test_color_management-0");
-
 class ImageDescription : public QObject, public QtWayland::wp_image_description_v1
 {
     Q_OBJECT
@@ -104,7 +102,7 @@ void ColorManagementTest::initTestCase()
 {
     qputenv("KWIN_COMPOSE", QByteArrayLiteral("O2"));
 
-    QVERIFY(waylandServer()->init(s_socketName));
+    QVERIFY(waylandServer()->init(qAppName()));
     kwinApp()->start();
     Test::setOutputConfig({
         Rect(0, 0, 1280, 1024),
