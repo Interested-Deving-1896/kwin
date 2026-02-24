@@ -48,6 +48,7 @@ RuntimeDependencies:
 
 Options:
  ctest-arguments: '--repeat until-pass:3 --timeout 90'
+ tests-run-in-parallel: True
  use-ccache: True
  cppcheck-arguments: '--enable=warning,style,performance --library=kwin-cppcheck.xml --suppress-xml=cppcheck-suppressions.xml'
  cppcheck-ignore-files:
