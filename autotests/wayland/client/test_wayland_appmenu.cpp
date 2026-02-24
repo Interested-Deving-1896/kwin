@@ -44,8 +44,6 @@ private:
     QThread *m_thread;
 };
 
-static const QString s_socketName = QStringLiteral("kwayland-test-wayland-appmenu-0");
-
 TestAppmenu::TestAppmenu(QObject *parent)
     : QObject(parent)
     , m_display(nullptr)
@@ -63,14 +61,14 @@ void TestAppmenu::init()
     qRegisterMetaType<AppMenuInterface::InterfaceAddress>();
     delete m_display;
     m_display = new KWin::Display(this);
-    m_display->addSocketName(s_socketName);
+    m_display->addSocketName(qAppName());
     m_display->start();
     QVERIFY(m_display->isRunning());
 
     // setup connection
     m_connection = new KWayland::Client::ConnectionThread;
     QSignalSpy connectedSpy(m_connection, &KWayland::Client::ConnectionThread::connected);
-    m_connection->setSocketName(s_socketName);
+    m_connection->setSocketName(qAppName());
 
     m_thread = new QThread(this);
     m_connection->moveToThread(m_thread);

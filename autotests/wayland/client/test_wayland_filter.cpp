@@ -42,8 +42,6 @@ private:
     KWin::SlideManagerInterface *m_slideManagerInterface;
 };
 
-static const QString s_socketName = QStringLiteral("kwayland-test-wayland-slide-0");
-
 // The following non-realistic class allows only clients in the m_allowedClients list to access the slide interface
 // all other interfaces are allowed
 class TestDisplay : public KWin::FilteredDisplay
@@ -79,7 +77,7 @@ void TestFilter::init()
     using namespace KWin;
     delete m_display;
     m_display = new TestDisplay(this);
-    m_display->addSocketName(s_socketName);
+    m_display->addSocketName(qAppName());
     m_display->start();
     QVERIFY(m_display->isRunning());
 
@@ -105,7 +103,7 @@ void TestFilter::testFilter()
     // setup connection
     std::unique_ptr<KWayland::Client::ConnectionThread> connection(new KWayland::Client::ConnectionThread());
     QSignalSpy connectedSpy(connection.get(), &KWayland::Client::ConnectionThread::connected);
-    connection->setSocketName(s_socketName);
+    connection->setSocketName(qAppName());
 
     std::unique_ptr<QThread> thread(new QThread(this));
     connection->moveToThread(thread.get());

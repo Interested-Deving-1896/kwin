@@ -72,8 +72,6 @@ private:
     KWayland::Client::Registry *m_registry = nullptr;
 };
 
-static const QString s_socketName = QStringLiteral("kwayland-test-wayland-server-side-decoration-0");
-
 TestServerSideDecoration::TestServerSideDecoration(QObject *parent)
     : QObject(parent)
 {
@@ -84,14 +82,14 @@ void TestServerSideDecoration::init()
     using namespace KWin;
     delete m_display;
     m_display = new KWin::Display(this);
-    m_display->addSocketName(s_socketName);
+    m_display->addSocketName(qAppName());
     m_display->start();
     QVERIFY(m_display->isRunning());
 
     // setup connection
     m_connection = new KWayland::Client::ConnectionThread;
     QSignalSpy connectedSpy(m_connection, &KWayland::Client::ConnectionThread::connected);
-    m_connection->setSocketName(s_socketName);
+    m_connection->setSocketName(qAppName());
 
     m_thread = new QThread(this);
     m_connection->moveToThread(m_thread);

@@ -131,8 +131,6 @@ private:
     QThread *m_thread;
 };
 
-static const QString s_socketName = QStringLiteral("kwin-test-wayland-seat-0");
-
 TestWaylandSeat::TestWaylandSeat(QObject *parent)
     : QObject(parent)
     , m_display(nullptr)
@@ -158,7 +156,7 @@ void TestWaylandSeat::init()
     using namespace KWin;
     delete m_display;
     m_display = new KWin::Display(this);
-    m_display->addSocketName(s_socketName);
+    m_display->addSocketName(qAppName());
     m_display->start();
     QVERIFY(m_display->isRunning());
     m_display->createShm();
@@ -173,7 +171,7 @@ void TestWaylandSeat::init()
     // setup connection
     m_connection = new KWayland::Client::ConnectionThread;
     QSignalSpy connectedSpy(m_connection, &KWayland::Client::ConnectionThread::connected);
-    m_connection->setSocketName(s_socketName);
+    m_connection->setSocketName(qAppName());
 
     m_thread = new QThread(this);
     m_connection->moveToThread(m_thread);
@@ -1622,7 +1620,7 @@ void TestWaylandSeat::testDataDeviceForKeyboardSurface()
     // create a second Wayland client connection to use it for setSelection
     auto c = new KWayland::Client::ConnectionThread;
     QSignalSpy connectedSpy(c, &KWayland::Client::ConnectionThread::connected);
-    c->setSocketName(s_socketName);
+    c->setSocketName(qAppName());
 
     auto thread = new QThread(this);
     c->moveToThread(thread);
