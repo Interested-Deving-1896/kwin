@@ -97,7 +97,6 @@ public:
 
     QSizeF minSize() const override;
     QSizeF maxSize() const override;
-    QSizeF basicUnit() const;
 
     bool windowEvent(xcb_generic_event_t *e);
     WindowType windowType() const override;

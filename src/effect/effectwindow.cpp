@@ -339,16 +339,6 @@ WindowType EffectWindow::windowType() const
     return d->m_window->windowType();
 }
 
-QSizeF EffectWindow::basicUnit() const
-{
-#if KWIN_BUILD_X11
-    if (auto window = qobject_cast<X11Window *>(d->m_window)) {
-        return window->basicUnit();
-    }
-#endif
-    return QSize(1, 1);
-}
-
 KDecoration3::Decoration *EffectWindow::decoration() const
 {
     return d->m_window->decoration();

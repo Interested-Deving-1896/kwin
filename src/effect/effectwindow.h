@@ -190,11 +190,6 @@ class KWIN_EXPORT EffectWindow : public QObject
      */
     Q_PROPERTY(bool moveableAcrossScreens READ isMovableAcrossScreens)
     /**
-     * By how much the window wishes to grow/shrink at least. Usually QSize(1,1).
-     * MAY BE DISOBEYED BY THE WM! It's only for information, do NOT rely on it at all.
-     */
-    Q_PROPERTY(QSizeF basicUnit READ basicUnit)
-    /**
      * Whether the window is currently being moved by the user.
      */
     Q_PROPERTY(bool move READ isUserMove)
@@ -391,11 +386,6 @@ public:
     qreal y() const;
     qreal width() const;
     qreal height() const;
-    /**
-     * By how much the window wishes to grow/shrink at least. Usually QSize(1,1).
-     * MAY BE DISOBEYED BY THE WM! It's only for information, do NOT rely on it at all.
-     */
-    QSizeF basicUnit() const;
     /**
      * Returns the geometry of the window excluding server-side and client-side
      * drop-shadows.

@@ -3132,11 +3132,6 @@ QSizeF X11Window::maxSize() const
     return rules()->checkMaxSize(Xcb::fromXNative(m_geometryHints.maxSize()));
 }
 
-QSizeF X11Window::basicUnit() const
-{
-    return QSize(1, 1);
-}
-
 /**
  * Auxiliary function to inform the client about the current window
  * configuration.
