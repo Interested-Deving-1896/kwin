@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-02-24 00:47+0000\n"
-"PO-Revision-Date: 2026-02-23 15:32+0100\n"
+"PO-Revision-Date: 2026-02-24 12:09+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -4269,7 +4269,7 @@ msgstr ""
 #: wayland/outputmanagement_v2.cpp:630
 #, kde-format
 msgid "%1 cannot mirror itself"
-msgstr ""
+msgstr "%1 non pote reflecter se mesme"
 
 #: wayland/outputmanagement_v2.cpp:637
 #, kde-format
@@ -4283,22 +4283,19 @@ msgstr ""
 "Non pote adder un modo personalisate con unratio de refrescar de zero Hz"
 
 #: wayland/outputmanagement_v2.cpp:652
-#, fuzzy, kde-format
-#| msgid "Position of output %s is way too negative (%d, %d)"
+#, kde-format
 msgid "Position of output %1 is way too negative (%2, %3)"
-msgstr "Position de sortita %s es troppo negative  (%d, %d)"
+msgstr "Position de sortita %1 es troppo negative  (%2, %3)"
 
 #: wayland/outputmanagement_v2.cpp:655
-#, fuzzy, kde-format
-#| msgid "Position of enabled output %s is negative (%d, %d)"
+#, kde-format
 msgid "Position of enabled output %1 is negative (%2, %3)"
-msgstr "Position de sortita habilitate %s es negative  (%d, %d)"
+msgstr "Position de sortita habilitate %1 es negative  (%2, %3)"
 
 #: wayland/outputmanagement_v2.cpp:659
-#, fuzzy, kde-format
-#| msgid "Position of output %s is way too large (%d, %d)"
+#, kde-format
 msgid "Position of output %1 is way too large (%2, %3)"
-msgstr "Position de sortita %s es troppo grande  (%d, %d)"
+msgstr "Position de sortita %1 es troppo grande  (%2, %3)"
 
 #: wayland/outputmanagement_v2.cpp:676
 #, kde-format

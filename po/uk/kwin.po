@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: kwin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-02-24 00:47+0000\n"
-"PO-Revision-Date: 2026-02-23 08:53+0200\n"
+"PO-Revision-Date: 2026-02-24 09:35+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -4277,7 +4277,7 @@ msgstr "Вимикання усіх виведень за допомогою з�
 #: wayland/outputmanagement_v2.cpp:630
 #, kde-format
 msgid "%1 cannot mirror itself"
-msgstr ""
+msgstr "%1 не може віддзеркалювати самого себе"
 
 #: wayland/outputmanagement_v2.cpp:637
 #, kde-format
@@ -4290,22 +4290,19 @@ msgid "Cannot add a custom mode with a refresh rate of zero Hz"
 msgstr "Неможливо додати нетиповий режим із частотою оновлення у нуль герців"
 
 #: wayland/outputmanagement_v2.cpp:652
-#, fuzzy, kde-format
-#| msgid "Position of output %s is way too negative (%d, %d)"
+#, kde-format
 msgid "Position of output %1 is way too negative (%2, %3)"
-msgstr "Позиція виведення %s є надто великою від'ємною (%d, %d)"
+msgstr "Позиція виведення %1 є надто великою від'ємною (%2, %3)"
 
 #: wayland/outputmanagement_v2.cpp:655
-#, fuzzy, kde-format
-#| msgid "Position of enabled output %s is negative (%d, %d)"
+#, kde-format
 msgid "Position of enabled output %1 is negative (%2, %3)"
-msgstr "Позиція дозволеного виведення %s є від'ємною (%d, %d)"
+msgstr "Позиція дозволеного виведення %1 є від'ємною (%2, %3)"
 
 #: wayland/outputmanagement_v2.cpp:659
-#, fuzzy, kde-format
-#| msgid "Position of output %s is way too large (%d, %d)"
+#, kde-format
 msgid "Position of output %1 is way too large (%2, %3)"
-msgstr "Позиція виведення %s є надто великою (%d, %d)"
+msgstr "Позиція виведення %1 є надто великою (%2, %3)"
 
 #: wayland/outputmanagement_v2.cpp:676
 #, kde-format

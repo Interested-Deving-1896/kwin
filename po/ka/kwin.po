@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kwin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-02-24 00:47+0000\n"
-"PO-Revision-Date: 2026-02-23 06:54+0100\n"
+"PO-Revision-Date: 2026-02-24 04:47+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -4256,7 +4256,7 @@ msgstr "ყველა გამოტანს გამორთვა კო
 #: wayland/outputmanagement_v2.cpp:630
 #, kde-format
 msgid "%1 cannot mirror itself"
-msgstr ""
+msgstr "%1-ს თავისი თავის არეკვლა არ შეუძლია"
 
 #: wayland/outputmanagement_v2.cpp:637
 #, kde-format
@@ -4270,22 +4270,19 @@ msgstr ""
 "0 ჰერცი განახლების სიხშირის მქონე მორგებული რეჟიმის დამატება შეუძლებელია"
 
 #: wayland/outputmanagement_v2.cpp:652
-#, fuzzy, kde-format
-#| msgid "Position of output %s is way too negative (%d, %d)"
+#, kde-format
 msgid "Position of output %1 is way too negative (%2, %3)"
-msgstr "%s-ის გამოტანის მდებარეობა მეტისმეტად უარყოფითია (%d, %d)"
+msgstr "%1-ის გამოტანის მდებარეობა მეტისმეტად უარყოფითია (%2, %3)"
 
 #: wayland/outputmanagement_v2.cpp:655
-#, fuzzy, kde-format
-#| msgid "Position of enabled output %s is negative (%d, %d)"
+#, kde-format
 msgid "Position of enabled output %1 is negative (%2, %3)"
-msgstr "%s-ის ჩართული გამოტანის მდებარეობა მეტისმეტად უარყოფითია (%d, %d)"
+msgstr "%1-ის ჩართული გამოტანის მდებარეობა მეტისმეტად უარყოფითია (%2, %3)"
 
 #: wayland/outputmanagement_v2.cpp:659
-#, fuzzy, kde-format
-#| msgid "Position of output %s is way too large (%d, %d)"
+#, kde-format
 msgid "Position of output %1 is way too large (%2, %3)"
-msgstr "%s-ის გამოტანის მდებარეობა მეტისმეტად დიდია (%d, %d)"
+msgstr "%1-ის გამოტანის მდებარეობა მეტისმეტად დიდია (%2, %3)"
 
 #: wayland/outputmanagement_v2.cpp:676
 #, kde-format

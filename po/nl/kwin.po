@@ -20,7 +20,7 @@ msgstr ""
 "Project-Id-Version: kwin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-02-24 00:47+0000\n"
-"PO-Revision-Date: 2026-02-23 10:49+0100\n"
+"PO-Revision-Date: 2026-02-24 11:51+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -4283,7 +4283,7 @@ msgstr ""
 #: wayland/outputmanagement_v2.cpp:630
 #, kde-format
 msgid "%1 cannot mirror itself"
-msgstr ""
+msgstr "%1 kan zichzelf niet spiegelen"
 
 #: wayland/outputmanagement_v2.cpp:637
 #, kde-format
@@ -4297,22 +4297,19 @@ msgstr ""
 "Kan geen aangepaste modus met een herhaalfrequentie van nul Hz toevoegen"
 
 #: wayland/outputmanagement_v2.cpp:652
-#, fuzzy, kde-format
-#| msgid "Position of output %s is way too negative (%d, %d)"
+#, kde-format
 msgid "Position of output %1 is way too negative (%2, %3)"
-msgstr "Positie van uitvoer %s is veel te negatief (%d, %d)"
+msgstr "Positie van uitvoer %1 is veel te negatief (%2, %3)"
 
 #: wayland/outputmanagement_v2.cpp:655
-#, fuzzy, kde-format
-#| msgid "Position of enabled output %s is negative (%d, %d)"
+#, kde-format
 msgid "Position of enabled output %1 is negative (%2, %3)"
-msgstr "Positie van ingeschakelde uitvoer %s is negatief (%d, %d)"
+msgstr "Positie van ingeschakelde uitvoer %1 is negatief (%2, %3)"
 
 #: wayland/outputmanagement_v2.cpp:659
-#, fuzzy, kde-format
-#| msgid "Position of output %s is way too large (%d, %d)"
+#, kde-format
 msgid "Position of output %1 is way too large (%2, %3)"
-msgstr "Positie van uitvoer %s is veel te groot (%d, %d)"
+msgstr "Positie van uitvoer %1 is veel te groot (%2, %3)"
 
 #: wayland/outputmanagement_v2.cpp:676
 #, kde-format

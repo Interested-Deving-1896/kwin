@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: kwin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-02-24 00:47+0000\n"
-"PO-Revision-Date: 2026-02-23 08:45+0100\n"
+"PO-Revision-Date: 2026-02-24 09:52+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -4285,7 +4285,7 @@ msgstr ""
 #: wayland/outputmanagement_v2.cpp:630
 #, kde-format
 msgid "%1 cannot mirror itself"
-msgstr ""
+msgstr "%1 no es pot emmirallar a si mateixa"
 
 #: wayland/outputmanagement_v2.cpp:637
 #, kde-format
@@ -4300,22 +4300,19 @@ msgstr ""
 "d'actualització de zero Hz"
 
 #: wayland/outputmanagement_v2.cpp:652
-#, fuzzy, kde-format
-#| msgid "Position of output %s is way too negative (%d, %d)"
+#, kde-format
 msgid "Position of output %1 is way too negative (%2, %3)"
-msgstr "La posició de l'eixida %s és massa negativa (%d, %d)"
+msgstr "La posició de l'eixida %1 és massa negativa (%2, %3)"
 
 #: wayland/outputmanagement_v2.cpp:655
-#, fuzzy, kde-format
-#| msgid "Position of enabled output %s is negative (%d, %d)"
+#, kde-format
 msgid "Position of enabled output %1 is negative (%2, %3)"
-msgstr "La posició de l'eixida activada %s és negativa (%d, %d)"
+msgstr "La posició de l'eixida activada %1 és negativa (%2, %3)"
 
 #: wayland/outputmanagement_v2.cpp:659
-#, fuzzy, kde-format
-#| msgid "Position of output %s is way too large (%d, %d)"
+#, kde-format
 msgid "Position of output %1 is way too large (%2, %3)"
-msgstr "La posició de l'eixida %s és massa gran (%d, %d)"
+msgstr "La posició de l'eixida %1 és massa gran (%2, %3)"
 
 #: wayland/outputmanagement_v2.cpp:676
 #, kde-format

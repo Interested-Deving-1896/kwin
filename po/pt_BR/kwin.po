@@ -20,7 +20,7 @@ msgstr ""
 "Project-Id-Version: kwin\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-02-24 00:47+0000\n"
-"PO-Revision-Date: 2026-02-23 09:03-0300\n"
+"PO-Revision-Date: 2026-02-24 08:49-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -4285,7 +4285,7 @@ msgstr ""
 #: wayland/outputmanagement_v2.cpp:630
 #, kde-format
 msgid "%1 cannot mirror itself"
-msgstr ""
+msgstr "%1 não pode espelhar a si mesmo"
 
 #: wayland/outputmanagement_v2.cpp:637
 #, kde-format
@@ -4300,22 +4300,19 @@ msgstr ""
 "de zero Hz"
 
 #: wayland/outputmanagement_v2.cpp:652
-#, fuzzy, kde-format
-#| msgid "Position of output %s is way too negative (%d, %d)"
+#, kde-format
 msgid "Position of output %1 is way too negative (%2, %3)"
-msgstr "A posição da saída %s é muito negativa (%d, %d)"
+msgstr "A posição da saída %1 é muito negativa (%2, %3)"
 
 #: wayland/outputmanagement_v2.cpp:655
-#, fuzzy, kde-format
-#| msgid "Position of enabled output %s is negative (%d, %d)"
+#, kde-format
 msgid "Position of enabled output %1 is negative (%2, %3)"
-msgstr "A posição da saída habilitada %s é negativa (%d, %d)"
+msgstr "A posição da saída habilitada %1 é negativa (%2, %3)"
 
 #: wayland/outputmanagement_v2.cpp:659
-#, fuzzy, kde-format
-#| msgid "Position of output %s is way too large (%d, %d)"
+#, kde-format
 msgid "Position of output %1 is way too large (%2, %3)"
-msgstr "A posição da saída %s é muito grande (%d, %d)"
+msgstr "A posição da saída %1 é muito grande (%2, %3)"
 
 #: wayland/outputmanagement_v2.cpp:676
 #, kde-format
