@@ -40,17 +40,6 @@ add_test(NAME kwayland-testWaylandSeat COMMAND testWaylandSeat)
 ecm_mark_as_test(testWaylandSeat)
 
 ########################################################
-# Test ShmPool
-########################################################
-set( testShmPool_SRCS
-        test_shm_pool.cpp
-    )
-add_executable(testShmPool ${testShmPool_SRCS})
-target_link_libraries( testShmPool Qt::Test Qt::Gui Plasma::KWaylandClient kwin)
-add_test(NAME kwayland-testShmPool COMMAND testShmPool)
-ecm_mark_as_test(testShmPool)
-
-########################################################
 # Test SubSurface
 ########################################################
 set( testSubSurface_SRCS
