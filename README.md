@@ -1,50 +1,75 @@
-# KWin
+[update-readmes]   Mode: rewrite — migrating to template structure...
+# kwin
 
-KWin is an easy to use, but flexible, compositor for Wayland on Linux. Its primary usage is in conjunction with a Desktop Shell (e.g. KDE Plasma Desktop). KWin is designed to go out of the way; users should not notice that they use a window manager at all. Nevertheless KWin provides a steep learning curve for advanced features, which are available, if they do not conflict with the primary mission. KWin does not have a dedicated targeted user group, but follows the targeted user group of the Desktop Shell using KWin as it's window manager.
+[![Built with Ona](https://ona.com/build-with-ona.svg)](https://app.ona.com/#https://github.com/Interested-Deving-1896/kwin)
 
-## KWin is not...
+<!-- AI:start:what-it-does -->
+_Description pending._
+<!-- AI:end:what-it-does -->
 
- * a standalone Wayland compositor (c.f. labwc, sway) and does not provide any functionality belonging to a Desktop Shell.
- * a replacement for window managers designed for use with a specific Desktop Shell (e.g. GNOME Shell)
- * a minimalistic window manager
- * designed for use with network transparency, though it is possible (with e.g. waypipe).
+## Architecture
 
-# Contributing to KWin
+<!-- AI:start:architecture -->
+_Architecture documentation pending._
+<!-- AI:end:architecture -->
 
-Please refer to the [contributing document](CONTRIBUTING.md) for everything you need to know to get started contributing to KWin.
+## Install
 
-# Contacting KWin development team
+<!-- Add installation instructions here. This section is yours — the AI will not modify it. -->
 
- * mailing list: [kwin@kde.org](https://mail.kde.org/mailman/listinfo/kwin)
- * IRC: #kde-kwin on irc.libera.chat
- * Matrix: [#kwin:kde.org](https://go.kde.org/matrix/#/#kwin:kde.org)
+```bash
+git clone https://github.com/Interested-Deving-1896/kwin.git
+cd kwin
+```
 
-# Support
-## Application Developer
-If you are an application developer having questions regarding windowing systems (either X11 or Wayland) please do not hesitate to contact us. Preferable through our mailing list. Ideally subscribe to the mailing list, so that your mail doesn't get stuck in the moderation queue.
+## Usage
 
-## End user
-Please contact the support channels of your Linux distribution for user support. The KWin development team does not provide end user support.
+<!-- Add usage examples here. This section is yours — the AI will not modify it. -->
 
-# Reporting bugs
+## Configuration
 
-Please use [KDE's bugtracker](https://bugs.kde.org) and report for [product KWin](https://bugs.kde.org/enter_bug.cgi?product=kwin).
+<!-- Document configuration options here. This section is yours — the AI will not modify it. -->
 
-## Guidelines for new features
+## CI
 
-A new Feature can only be added to KWin if:
+<!-- AI:start:ci -->
+_CI documentation pending._
+<!-- AI:end:ci -->
 
- * it does not violate the primary missions as stated at the start of this document
- * it does not introduce instabilities
- * it is maintained, that is bugs are fixed in a timely manner (second next minor release) if it is not a corner case.
- * it works together with all existing features
- * it supports both single and multi screen
- * it adds a significant advantage
- * it is feature complete, that is supports at least all useful features from competitive implementations
- * it is not a special case for a small user group
- * it does not increase code complexity significantly
- * it does not affect KWin's license (GPLv2+)
+## Mirror chain
 
-All new added features are under probation, that is if any of the non-functional requirements as listed above do not hold true in the next two feature releases, the added feature will be removed again.
+<!-- AI:start:mirror-chain -->
+This repo is maintained in [`Interested-Deving-1896/kwin`](https://github.com/Interested-Deving-1896/kwin) and mirrored through:
 
-The same non functional requirements hold true for any kind of plugins (effects, scripts, etc.). It is suggested to use scripted plugins and distribute them separately.
+```
+Interested-Deving-1896/kwin  ──►  OpenOS-Project-OSP/kwin  ──►  OpenOS-Project-Ecosystem-OOC/kwin
+```
+
+Changes flow downstream automatically via the hourly mirror chain in
+[`fork-sync-all`](https://github.com/Interested-Deving-1896/fork-sync-all).
+Direct commits to OSP or OOC are detected and opened as PRs back to `Interested-Deving-1896`.
+<!-- AI:end:mirror-chain -->
+
+## Contributors
+
+<!-- AI:start:contributors -->
+_Contributors pending._
+<!-- AI:end:contributors -->
+
+## Origins
+
+<!-- AI:start:origins -->
+_Original project — no upstream fork._
+<!-- AI:end:origins -->
+
+## Resources
+
+<!-- AI:start:resources -->
+_No additional resource files found._
+<!-- AI:end:resources -->
+
+## License
+
+<!-- AI:start:license -->
+<!-- License not detected — add a LICENSE file to this repo. -->
+<!-- AI:end:license -->
